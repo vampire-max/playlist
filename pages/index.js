@@ -3,6 +3,7 @@ import Link from 'next/link'
 import About from './about.js'
 import Login from './login.js'
 import Register from './register.js'
+import nextConnect from 'next-connect'
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         <h1 className="title">
           Welcome to
           <Link href="/about">
-            <a href="https://nextjs.org">Next.js!</a>
+            <a>Next.js!</a>
           </Link>
         </h1>
 
@@ -26,24 +27,21 @@ export default function Home() {
 
         <div className="grid">
           <Link href="/register">
-            <a href="https://nextjs.org/docs" className="card">
+            <a className="card">
               <h3>Register &rarr;</h3>
               <p>Find in-depth information about Next.js features and API.</p>
             </a>
           </Link>
 
           <Link href="/login">
-            <a href="https://nextjs.org/learn" className="card">
+            <a className="card">
               <h3>Login &rarr;</h3>
               <p>Learn about Next.js in an interactive course with quizzes!</p>
             </a>
           </Link>
 
           <Link href="/blog">
-            <a
-              href="https://github.com/vercel/next.js/tree/master/examples"
-              className="card"
-            >
+            <a className="card">
               <h3>blog &rarr;</h3>
               <p>Discover and deploy boilerplate example Next.js projects.</p>
             </a>
