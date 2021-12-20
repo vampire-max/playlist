@@ -25,7 +25,7 @@ export default function Home() {
         </p>
 
         <div className="grid">
-          <Link href="/Register">
+          <Link href="/register">
             <a href="https://nextjs.org/docs" className="card">
               <h3>Register &rarr;</h3>
               <p>Find in-depth information about Next.js features and API.</p>
