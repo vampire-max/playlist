@@ -1,0 +1,29 @@
+const express = require('express')
+// const next = require('next')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+
+// const dev = process.env.NODE_ENV !== 'production'
+
+const PORT = 3001
+// const app = next({ dev })
+const app = express()
+
+require('dotenv').config()
+
+app.use(bodyParser.json())
+
+const userRoutes = require('./routes/api.user')
+const blogRoutes = require('./routes/api.blog')
+
+app.use('/api/user', userRoutes)
+app.use('/api/blog', blogRoutes)
+
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+  })
+  .then(() => console.log('connect to db'))
+  .catch((err) => console.log(("couldn't connect to db, here is why:", err)))
+
+app.listen(PORT, () => console.log(`listening port ${PORT}`))
