@@ -3,6 +3,7 @@ import Link from 'next/link'
 import About from './about.js'
 import Login from './login.js'
 import Register from './register.js'
+import User from './user/index.js'
 import nextConnect from 'next-connect'
 
 export default function Home() {
@@ -47,15 +48,14 @@ export default function Home() {
             </a>
           </Link>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <Link href="/user">
+            <a className="card">
+              <h3>User &rarr;</h3>
+              <p>
+                Instantly deploy your Next.js site to a public URL with Vercel.
+              </p>
+            </a>
+          </Link>
         </div>
       </main>
 
