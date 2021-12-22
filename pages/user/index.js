@@ -1,49 +1,46 @@
 import React, { useEffect } from 'react'
 
-export default function Blog() {
+export default function User() {
   useEffect(() => {
-    // axios({
-    //   url: '/api/post-data',
-    //   method: 'post',
-    //   data: {
-    //     username: 'asd',
-    //     password: 'qwe',
-    //   },
-    // })
-
-    fetch('/api/blog/post-blog', {
+    fetch('/api/user/post-user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        title: 'title',
-        description: 'description',
-        author: 'author',
+        name: 'kai',
+        username: 'vampire',
+        password: '1234',
+        dob: '1998-06-06',
+        gender: 'female',
+        country: 'Canada',
       }),
     })
 
-    fetch('/api/blog/update-blog', {
+    fetch('/api/user/update-user', {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         id: '_id',
-        title: 'title1',
-        description: 'description1',
-        author: 'author1',
+        name: 'krystal',
+        username: 'vampire-max',
+        password: '12345',
+        dob: '1998-06-01',
+        gender: 'male',
+        country: 'USA',
       }),
     })
 
-    fetch('/api/blog/get-blog', {
+    fetch('/api/user/get-user', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
     })
 
-    fetch('/api/blog/delete-blog', {
+    fetch('/api/user/delete-user', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -54,5 +51,5 @@ export default function Blog() {
     })
   })
 
-  return <div>Blog</div>
+  return <div>User</div>
 }
